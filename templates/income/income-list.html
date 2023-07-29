@@ -1,0 +1,66 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<script>
+    function transferValue() {
+    var total_income = {{ total_amount|floatformat:2 }};
+    document.getElementById('calc_income').value = total_income;
+    localStorage.setItem('calc_income', total_income);
+    }
+</script>
+
+
+
+
+
+
+    
+<div class="table_container">
+    <div class="button_section">
+            <span class="table_title">Total Income: $ {{ total_amount|floatformat:2 }} </span>
+                <a href="{% url 'income create' %}"><button class="form_button">Add Income</button></a>
+    </div>
+
+    <div class="table_section">
+        <table class="listed_table">
+            <tr class="table_header">
+                <th class="date">Date</th>
+                <th class="description">Description</th>
+                <th colspan = "3" class="amount">Amount</th>
+            </tr>
+
+            {% for income in page_obj %}
+                <tr class="table_rows">
+                    <td class="date">{{ income.date }}</td>
+                    <td class="description">{{ income.description|capfirst }}</td>
+                    <td class="amount">$ {{ income.amount|floatformat:2 }}</td>
+                    <td class="edit">
+                        <a href="{% url 'income edit' income_pk=income.pk %}">
+                        <img class='small_icons' src="{% static 'images/edit.png' %}" alt="edit">
+                        </a>
+                    </td>
+                    <td class="delete">
+
+                        {% if not staff_member or supper_user %}
+                        <a href="{% url 'income delete' income_pk=income.pk %}">
+                        <img class='small_icons' src="{% static 'images/delete.png' %}" alt="delete">
+                        </a>
+                        {% endif %}
+
+                    </td>
+                </tr>
+            {% endfor %}
+
+            <tr class="lumpsum">
+                <th colspan = "2" class="total_amount">Total Income:</th>
+                <th colspan = "3" class="sum_amount">$ {{ total_amount|floatformat:2 }}</th>
+            </tr>
+        </table>
+    </div>
+
+    {% include 'partials/pagination.html' %}
+
+</div>
+{% endblock %}

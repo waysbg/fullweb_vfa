@@ -1,0 +1,96 @@
+.table_container {
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.button_section {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.listed_table{
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 100%;
+    border-spacing: 0;
+    box-shadow: 0 0 5px lightgrey;
+}
+
+.table_title{
+  margin-right: 140px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: dimgrey;
+  padding: 0 20px;
+}
+
+th.date {
+    border-top-left-radius: 10px;
+}
+
+th.amount {
+    border-top-right-radius: 10px;
+}
+
+.table_header th {
+    text-align: center;
+    border-bottom: 1px solid lightgrey;
+    background: aliceblue;
+    font-size: 15px;
+}
+
+.table_rows td {
+    border-bottom: 1px solid lightgrey;
+    font-size: 14px;
+    background-color: white;
+}
+
+.date{
+    width: 20%;
+    text-align: center;
+    border-right: 1px solid lightgrey;
+}
+
+.amount {
+    width: 18%;
+    text-align: left;
+    border-left: 1px solid lightgrey;
+    padding-left: 5px;
+
+}
+
+.lumpsum{
+    background: aliceblue;
+    font-size: 15px;
+}
+
+.total_amount {
+    text-align: right;
+    border-bottom-left-radius: 10px;
+    padding-right: 5px;
+}
+
+.sum_amount {
+    border-bottom-right-radius: 10px;
+    border-left: 1px solid lightgrey;
+}
+
+.edit {
+    width: 2%;
+}
+
+.delete {
+    width: 2%;
+}
+
+.small_icons {
+    width: 10px;
+}
+
+.description {
+    padding-left: 5px;
+    padding-right: 5px;
+}

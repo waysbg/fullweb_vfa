@@ -1,0 +1,32 @@
+{% load static %}
+
+<footer>
+    {% if user.is_authenticated and show_bars %}
+        <div class="second_row">
+            {% include 'partials/calculator.html' %}
+        </div>
+    {% endif %}
+
+    {% if show_footer_p %}
+        <div class="footer_text">
+            <div id="left_footer">
+                <a href="{% url 'important' %}">Important...</a>
+
+                {% if show_admin_site %}
+                    <span class="staff_section">
+                        <a href="{% url 'admin site' %}">Staff section...</a>
+                    </span>
+                {% endif %}
+
+            </div>
+
+            <div id="center_footer">Virtual Finance Assistant - WaysBG Design 2023. All rights reserved.</div>
+
+            <div id="right_footer">
+                <a href="https://www.facebook.com/">
+                    <img src="{% static 'images/facebook.png'%}" alt="facebook">
+                </a>
+            </div>
+        </div>
+    {% endif %}
+</footer>

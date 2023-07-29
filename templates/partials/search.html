@@ -1,0 +1,22 @@
+<form method="get" class="search_form">
+    <span class="date_search">
+        <label for="start_date">From: </label>
+        <input id="start_date" type="date" name="start_date_search" value={{ start_date_search }}>
+        <label for="end_date">To:</label>
+        <input id="end_date" type="date" name="end_date_search" value={{ end_date_search }}>
+    </span>
+
+    <span class="description_search">
+        <input id="description" type="text" name="description_search" placeholder="Description" value={{ description_search }}>
+    </span>
+
+    <span class="amount_search">
+        <input id="start_amount" type="number" name="start_amount_search" placeholder="Start Amount" value={{ start_amount_search }}>
+        <input id="end_amount" type="number" name="end_amount_search" placeholder="End Amount" value={{ end_amount_search }}>
+    </span>
+
+    <span class="button_search">
+        <button onclick="transferValue()">Search / Add</button>
+    </span>
+        {% csrf_token %}
+</form>

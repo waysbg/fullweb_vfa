@@ -1,0 +1,48 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+
+<div class="statistics_container">
+
+    <div class="statistics_title">Statistics</div>
+
+    {% if not user_is_authenticated %}
+    <div class="statistics_data">
+        Users: {{ total_users }}
+    </div>
+    <div class="bar" style="width: {{ bar_percent_users }}%;"><hr></div>
+    {% endif %}
+
+    <div class="statistics_data">
+        <span style="width: 25%">Income: $ {{ total_income|floatformat:0 }}</span>
+        <span style="margin: auto;">{{ percent_income }}%</span>
+    </div>
+    <div class="bar" style="width: {{ bar_percent_income }}%;"><hr></div>
+
+    <div class="statistics_data">
+        <span style="width: 25%">Bills: $ {{ total_bills|floatformat:0 }}</span>
+        <span style="margin: auto;">{{ percent_bills }}%</span>
+    </div>
+    <div class="bar" style="width: {{ bar_percent_bills }}%;"><hr></div>
+
+    <div class="statistics_data">
+        <span style="width: 25%">Daily: $ {{ total_daily|floatformat:0 }}</span>
+        <span style="margin: auto;">{{ percent_daily }}%</span>
+    </div>
+    <div class="bar" style="width: {{ bar_percent_daily }}%;"><hr></div>
+
+    <div class="statistics_data">
+        <span style="width: 25%">Other: $ {{ total_other|floatformat:0 }}</span>
+        <span style="margin: auto;">{{ percent_other }}%</span>
+    </div>
+    <div class="bar" style="width: {{ bar_percent_other }}%;"><hr></div>
+
+    <div class="statistics_data">
+        <span style="width: 25%">Savings: $ {{ total_savings|floatformat:0 }}</span>
+        <span style="margin: auto;">{{ percent_savings }}%</span>
+    </div>
+    <div class="bar" style="width: {{ bar_percent_savings }}%;"><hr></div>
+
+</div>
+
+{% endblock %}

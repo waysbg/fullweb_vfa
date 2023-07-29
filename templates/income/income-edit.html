@@ -1,0 +1,18 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+
+<section>
+    <div class="form">
+
+        <h1>Edit Income</h1>
+
+        <form class="sign_up_form" action="{% url 'income edit' income_pk=income_pk %}" method="post">
+            {% csrf_token %}
+                {{ form }}
+            <button class="form_button">Edit</button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}

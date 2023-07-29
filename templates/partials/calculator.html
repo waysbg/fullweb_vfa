@@ -1,0 +1,72 @@
+    <script>
+
+        function calculate_savings() {
+
+            var calc_income = document.getElementById("calc_income").value;
+            var calc_bills = document.getElementById("calc_bills").value;
+            var calc_daily = document.getElementById("calc_daily").value;
+            var calc_other = document.getElementById("calc_other").value;
+
+            var calc_savings = calc_income - calc_bills - calc_daily - calc_other;
+
+            document.getElementById("calc_savings").value = calc_savings;
+            localStorage.setItem('calc_savings', calc_savings);
+        }
+
+        function saveFieldValues() {
+            localStorage.setItem('calc_income', document.getElementById('calc_income').value);
+            localStorage.setItem('calc_bills', document.getElementById('calc_bills').value);
+            localStorage.setItem('calc_daily', document.getElementById('calc_daily').value);
+            localStorage.setItem('calc_other', document.getElementById('calc_other').value);
+        }
+
+        function retrieveFieldValues() {
+            document.getElementById('calc_income').value = localStorage.getItem('calc_income') || '';
+            document.getElementById('calc_bills').value = localStorage.getItem('calc_bills') || '';
+            document.getElementById('calc_daily').value = localStorage.getItem('calc_daily') || '';
+            document.getElementById('calc_other').value = localStorage.getItem('calc_other') || '';
+            document.getElementById('calc_savings').value = localStorage.getItem('calc_savings') || '';
+
+        }
+
+        function clearFields() {
+            document.getElementById('calc_income').value = '';
+            document.getElementById('calc_bills').value = '';
+            document.getElementById('calc_daily').value = '';
+            document.getElementById('calc_other').value = '';
+            document.getElementById('calc_savings').value = '';
+            localStorage.removeItem('calc_income');
+            localStorage.removeItem('calc_bills');
+            localStorage.removeItem('calc_daily');
+            localStorage.removeItem('calc_other');
+            localStorage.removeItem('calc_savings');
+        }
+
+        window.onload = retrieveFieldValues;
+
+    </script>
+
+
+<form method="get" class="calculator_form">
+    <span class="data_values">
+        <label for="calc_income">Income: </label>
+        <input id="calc_income" type="number" placeholder="Income" oninput="saveFieldValues();" step="any">
+
+        <label for="calc_bills">Bills: </label>
+        <input id="calc_bills" type="number" placeholder="Bills" oninput="saveFieldValues();" step="any">
+
+        <label for="calc_daily">Daily: </label>
+        <input id="calc_daily" type="number" placeholder="Daily" oninput="saveFieldValues();" step="any">
+
+        <label for="calc_other">Other: </label>
+        <input id="calc_other" type="number" placeholder="Other" oninput="saveFieldValues();" step="any">
+
+        <label for="calc_daily">Savings: </label>
+        <input id="calc_savings" type="number" placeholder="Savings" readonly>
+    </span>
+
+    <span class="calculator_buttons">
+        <button onclick="calculate_savings()" class="button_calculate">Calculate</button>
+        <button onclick="clearFields();" class="button_clear">Clear</button>
+    </span>
+</form>

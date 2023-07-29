@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.form {
+  max-width: 250px;
+  margin: 0 auto;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  padding: 30px 30px;
+  text-align: center;
+  border-radius: 15px;
+  color: dimgrey;
+  font-size: 14px;
+  border: 1px solid darkgrey;
+  width: 100%;
+  border-spacing: 0;
+  box-shadow: 0 0 10px darkgrey;
+  background: aliceblue;
+}
+
+.form h1 {
+  font-size: 1.5rem;
+  color: dimgray;
+  padding-bottom: 10px;
+}
+
+.form input[type=text] {
+  margin-bottom: 40px;
+}
+
+.form input[type=date] {
+  margin-bottom: 40px;
+  width: 77%;
+  padding: 6px;
+}
+
+.form input[type="password"] {
+  margin-bottom: 10px;
+  margin-top: -5px;
+}
+
+.form input {
+  border: 1px solid gray;
+  border-radius: 15px;
+  padding-left: 10px;
+  padding-bottom: 7px;
+  padding-top: 8px;
+  margin-top: 10px;
+  font-size: 15px;
+  color: dimgrey;
+  transition: .3s;
+  background-color: whitesmoke;
+  box-shadow: 0 0 5px lightgrey;
+}
+
+.form input::placeholder {
+  color: dimgrey;
+}
+
+.form input:focus {
+  outline: none;
+  box-shadow: 0 0 8px #719ECE;
+  border: 1px solid gray;
+  background-color: #EBEBEE;
+  color: dimgrey;
+}
+
+.button_section {
+  padding-bottom: 20px;
+}
+
+.form_button {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: steelblue;
+  width: 150px;
+  border: 0;
+  padding: 10px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: .3s;
+  box-shadow: 0 0 5px grey;
+}
+
+.form_button:hover,
+.form_button:active,
+.form_button:focus {
+  box-shadow: 0 0 8px #719ECE;
+}
+
+.errorlist {
+  margin: auto;
+  width: 85%;
+  font-size: 13px;
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+

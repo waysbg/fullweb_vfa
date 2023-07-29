@@ -1,0 +1,6 @@
+/postgresql/
+/static/
+/envs/
+docker-compose.prod.yml
+docker-compose.yml
+*.log

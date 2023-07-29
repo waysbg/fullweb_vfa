@@ -1,0 +1,49 @@
+{% load static %}
+
+<header>
+    <div class="first_row">
+            <!-- Navigation Logo -->
+            <a href="{% url 'index' %}">
+                <div class="logo-section">
+                        <img src="{% static 'images/logo.png' %}" alt="logo"/>
+                        Virtual Finance Site
+                </div>
+            </a>
+
+        <!-- Navigation Links and Profile -->
+        <nav class="navigation">
+
+            {% if user.is_authenticated %}
+            <!-- If user is authenticated -->
+                <div class="user">
+                    <a href="{% url 'income list' %}">Income</a>
+                    <a href="{% url 'bills list' %}">Bills</a>
+                    <a href="{% url 'daily list' %}">Daily</a>
+                    <a href="{% url 'other list' %}">Other</a>
+                    <a href="{% url 'profile details' pk=user.pk %}">
+                            {% if user.profile.avatar_photo %}
+                                <img id="user_img" src="{{ user.profile.avatar_photo }}" alt="profile picture">
+                            {% else %}
+                                <img id="user_img" src="{% static 'images/user.png'%}" alt="profile picture">
+                            {% endif %}
+                    </a>
+                </div>
+            {% else %}
+            <!-- If user is not authenticated -->
+                <div class="guest">
+                    <a href="{% url 'sign up' %}">Sign Up</a>
+                    <a href="{% url 'sign in' %}">Log In</a>
+                </div>
+            {% endif %}
+        </nav>
+        </div>
+
+
+    {% if user.is_authenticated and show_bars %}
+        <div class="second_row">
+                    {% include 'partials/search.html' %}
+        </div>
+    {% endif %}
+
+</header>
+

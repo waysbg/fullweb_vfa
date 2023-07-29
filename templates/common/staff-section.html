@@ -1,0 +1,33 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+    <div class="table_container">
+
+    <div class="button_section">
+        <span class="table_title">Count of users out 1+ year: {{ old_users_count }} </span>
+        <a href="{% url 'users delete' %}"><button class="form_button">Delete Old</button></a>
+    </div>
+
+    <div class="table_section">
+        <table class="listed_table">
+            <tr class="table_header">
+                <th class="date" style="border-right: 0">Username</th>
+                <th class="amount" style="border-left: 0">Days Out</th>
+            </tr>
+
+            {% for user in old_users %}
+                <tr class="table_rows">
+                    <td class="date" style="border-right: 0">{{ user.username }}</td>
+                    <td class="date">{{ user.days_out }}</td>
+                </tr>
+            {% endfor %}
+
+            <tr class="lumpsum">
+                <th class="total_amount" >&nbsp;</th>
+                <th class="sum_amount" style="border-left: 0">&nbsp;</th>
+            </tr>
+
+        </table>
+    </div>
+
+    {% endblock %}

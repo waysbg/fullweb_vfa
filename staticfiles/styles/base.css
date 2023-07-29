@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap');
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  overflow: auto;
+  font-family: 'Lato', sans-serif;
+}
+
+footer {
+  color:  black;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
+  background: aliceblue;
+  box-shadow: 0 0 5px grey;
+  padding: 0;
+
+}
+
+.footer_text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding: 0 25px;
+  color: dimgrey;
+}
+
+.footer_text a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer_text img{
+  height: 23px;
+}
+
+#left_footer {
+  width: 25%;
+  text-align: left;
+}
+
+#center_footer {
+  width: 50%;
+  text-align: center;
+}
+
+#right_footer {
+  width: 25%;
+  text-align: right;
+}
+
+.staff_section {
+  margin-left: 25px;
+}
+

@@ -1,0 +1,46 @@
+{% extends 'common/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div id="details-wrapper">
+
+    <div id="details-title">{{ user.username|upper }}</div>
+
+    {% if user.profile.avatar_photo %}
+        <img style="border: 4px solid steelblue;" src="{{ user.profile.avatar_photo }}" alt="profile picture">
+    {% else %}
+        <img style="border: 0px;" src="{% static 'images/user.png'%}" alt="profile picture">
+    {% endif %}
+
+    <div>
+        <div id="details-description">
+            <p>
+                <strong>Avatar Address:</strong>
+            </p>
+            <p>
+                {% if user.profile.avatar_photo %}
+                {{ user.profile.avatar_photo|truncatechars:40 }}
+                {% else %}
+                You have not edited your Avatar ULR yet.
+                {% endif %}
+            </p>
+
+        </div>
+
+        <div id="action-buttons">
+            <a href="{% url 'profile edit' pk=user.pk %}" id="edit-btn">PHOTO</a>
+            <a href="{% url 'password change' pk=user.pk %}" id="password-btn">PASSWORD</a>
+            <a href="{% url 'profile delete' pk=user.pk %}" id="delete-btn">DELETE</a>
+        </div>
+
+        <div class="user_log_out">
+            <a href="{% url 'sign out' %}">Log Out</a>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

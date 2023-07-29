@@ -1,0 +1,19 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+
+<section>
+    <div class="form">
+
+        <h1>Change Photo</h1>
+
+        <form class='form_styling' action="{% url 'profile edit' pk=user.pk %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button class="form_button">Confirm</button>
+        </form>
+    </div>
+
+</section>
+
+{% endblock %}
