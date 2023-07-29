@@ -4,3 +4,4 @@
 docker-compose.prod.yml
 docker-compose.yml
 *.log
+/tmp/
