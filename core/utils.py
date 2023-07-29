@@ -60,7 +60,7 @@ class SearchBarView(views.ListView):
         context['end_amount_search'] = self.__get_end_amount_search()
 
         context['total_amount'] = sum(user.amount for user in self.object_list.all())
-
+        context['total_count'] = self.object_list.all().count()
         context['staff_member'] = self.request.user.is_staff
         context['supper_user'] = self.request.user.is_superuser
         context['show_bars'] = True

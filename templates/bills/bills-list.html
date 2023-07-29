@@ -15,7 +15,14 @@
     
 <div class="table_container">
     <div class="button_section">
-            <span class="table_title">Total Bills: $ {{ total_amount|floatformat:2 }} </span>
+            <span class="table_title">
+                {{ total_count }}
+                {% if total_count != 1 %}
+                    Entries
+                {% else %}
+                    Entry
+                {% endif %}
+                - Bills: $ {{ total_amount|floatformat:2 }} </span>
             <a href="{% url 'bill create' %}"><button class="form_button">Add Bill</button></a>
     </div>
 

@@ -19,7 +19,14 @@
     
 <div class="table_container">
     <div class="button_section">
-            <span class="table_title">Total Income: $ {{ total_amount|floatformat:2 }} </span>
+            <span class="table_title">
+                {{ total_count }}
+                {% if total_count != 1 %}
+                    Entries
+                {% else %}
+                    Entry
+                {% endif %}
+                - Income: $ {{ total_amount|floatformat:2 }}  </span>
                 <a href="{% url 'income create' %}"><button class="form_button">Add Income</button></a>
     </div>
 
