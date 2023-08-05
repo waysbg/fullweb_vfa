@@ -17,7 +17,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', None)
 DEBUG = bool(int(os.environ.get('DEBUG')))
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(' ')
-CSRF_TRUSTED_ORIGINS = [f'https://{x}' for x in ALLOWED_HOSTS] + [f'http://{x}' for x in ALLOWED_HOSTS]
+CSRF_TRUSTED_ORIGINS = [f'https://{x}' for x in ALLOWED_HOSTS]
 
 # Application definition
 
@@ -137,7 +137,6 @@ LOGIN_REDIRECT_URL = reverse_lazy('index')
 
 # This changes the User Class used for authentication model
 AUTH_USER_MODEL = 'accounts.AppUser'
-
 
 
 LOGGING = {
