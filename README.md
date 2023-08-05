@@ -1,4 +1,4 @@
 # fullweb_vfa
-Web site app helping families to track their budget.
+A finance app that helps families keep track of their budget. Statistics and search functionality make it easy to understand how to maximize savings and optimize spending.
 
 https://virtualfinance.site/
