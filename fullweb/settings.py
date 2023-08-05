@@ -147,6 +147,14 @@ LOGGING = {
             'level': 'INFO',
             'class': 'logging.FileHandler',
             'filename': BASE_DIR / 'django.log',
+            'formatter': 'simple',
+        },
+    },
+
+    'formatters': {
+        'simple': {
+            'format': '{asctime}: {message}',
+            'style': '{',
         },
     },
 
