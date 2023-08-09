@@ -35,6 +35,9 @@ class SearchBarView(views.ListView):
         start_amount_search = self.__get_start_amount_search()
         end_amount_search = self.__get_end_amount_search()
 
+        if not self.request.user.is_staff:
+            query_set = query_set.filter(user_id=self.request.user.pk)
+
         if start_date_search:
             query_set = query_set.filter(date__gte=start_date_search)
         if end_date_search:
@@ -45,9 +48,6 @@ class SearchBarView(views.ListView):
             query_set = query_set.filter(amount__gte=start_amount_search)
         if end_amount_search:
             query_set = query_set.filter(amount__lte=end_amount_search)
-
-        if not self.request.user.is_staff:
-            query_set = query_set.filter(user_id=self.request.user.pk)
 
         return query_set
 
